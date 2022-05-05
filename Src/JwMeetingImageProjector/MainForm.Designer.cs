@@ -44,7 +44,7 @@
             this.HideButton = new System.Windows.Forms.Button();
             this.ImageListView = new System.Windows.Forms.ListView();
             this.ViewedImageList = new System.Windows.Forms.ImageList(this.components);
-            this.ImageFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.OpenImageDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -153,7 +153,7 @@
             this.SelectImageFolderButton.Name = "SelectImageFolderButton";
             this.SelectImageFolderButton.Size = new System.Drawing.Size(233, 60);
             this.SelectImageFolderButton.TabIndex = 2;
-            this.SelectImageFolderButton.Text = "Select Image Folder...";
+            this.SelectImageFolderButton.Text = "Select Image...";
             this.SelectImageFolderButton.UseVisualStyleBackColor = true;
             this.SelectImageFolderButton.Click += new System.EventHandler(this.SelectImageFolderButton_Click);
             // 
@@ -244,9 +244,11 @@
             this.ViewedImageList.ImageSize = new System.Drawing.Size(16, 16);
             this.ViewedImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // ImageFolderBrowserDialog
+            // OpenImageDialog
             // 
-            this.ImageFolderBrowserDialog.ShowNewFolderButton = false;
+            this.OpenImageDialog.Filter = "Image (*.jpg;*.jpeg;*.png;*.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
+            this.OpenImageDialog.Multiselect = true;
+            this.OpenImageDialog.Title = "Select Images";
             // 
             // MainForm
             // 
@@ -277,7 +279,6 @@
         private Button SelectImageFolderButton;
         private ListView ImageListView;
         private ImageList ViewedImageList;
-        private FolderBrowserDialog ImageFolderBrowserDialog;
         private Label label3;
         private ComboBox PcMonitorComboBox;
         private Button ResetButton;
@@ -286,5 +287,6 @@
         private Button HideButton;
         private Button PreviewButton;
         private Button NextButton;
+        private OpenFileDialog OpenImageDialog;
     }
 }
